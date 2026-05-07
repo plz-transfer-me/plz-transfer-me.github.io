@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Личный кабинет</title>
+</head>
+<body>
+<div id="l"></div>
+<script>
+let h=location.hash.substring(1);
+if(h){
+    let d=decodeURIComponent(atob(h));
+    let l=d.split("\n");
+    let n="",d2="",s=[];
+    for(let i=0;i<l.length;i++){
+        if(l[i].startsWith("name=")) n=decodeURIComponent(l[i].slice(5));
+        else if(l[i].startsWith("desc=")) d2=decodeURIComponent(l[i].slice(5));
+        else if(l[i].startsWith("servers=")){
+            for(let j=i+1;j<l.length;j++){
+                let p=l[j].split("|");
+                if(p.length>=3) s.push({f:p[0],n:p[1],l:p[2]});
+            }
+        }
+    }
+    let o="";
+    if(n) o+="<h3>Здравствуйте, "+n+"!</h3><p>"+d2+"</p><hr>";
+    for(let i of s) o+="<div><b>"+i.f+" "+i.n+"</b> <a href=\"v2raytun://import/"+i.l+"\" style=\"text-decoration:none;background:#0a0;color:#fff;padding:4px 12px;border-radius:4px\">Подключить</a></div>";
+    document.getElementById("l").innerHTML=o;
+}
+</script>
+</body>
+</html>
