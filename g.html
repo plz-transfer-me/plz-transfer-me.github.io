@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Личный кабинет</title>
 </head>
 <body>
@@ -24,7 +25,7 @@ if(h){
     }
     let o="";
     if(n) o+="<h3>Здравствуйте, "+n+"!</h3><p>"+d2+"</p><hr>";
-    for(let i of s) o+="<div><b>"+i.f+" "+i.n+"</b> <a href=\"v2raytun://import/"+i.l+"\" style=\"text-decoration:none;background:#0a0;color:#fff;padding:4px 12px;border-radius:4px\">Подключить</a></div>";
+    for(let i of s) o+="<div style=\"margin:10px 0\"><b>"+i.f+" "+i.n+"</b> <a href=\"v2raytun://import/"+i.l+"\" style=\"display:inline-block;background:#0a0;color:#fff;padding:6px 12px;text-decoration:none;border-radius:4px\">Подключить</a></div>";
     document.getElementById("l").innerHTML=o;
 }
 </script>
