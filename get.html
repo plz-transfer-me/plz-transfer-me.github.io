@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+let h=location.hash.substring(1);
+if(h){
+let enc=atob(h);
+let domain=location.hostname;
+let r='';
+for(let i=0;i<enc.length;i++){
+let keyByte=domain.charCodeAt(i%domain.length);
+let byte=enc.charCodeAt(i);
+r+=String.fromCharCode(byte^keyByte);
+}
+location.href='v2raytun://import/'+r; //version2.2 v2.2 ray-tracing rtx car-tunning tunning release contact_import code_verison = 2.2
+}
+</script>
+</head>
+<body></body>
+</html>
